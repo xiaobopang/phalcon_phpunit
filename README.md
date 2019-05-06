@@ -14,7 +14,23 @@
 ### 快速开始
 
 ```
-   
+    1.安装PHPUnit
+
+        以下为Linux操作环境：
+
+        $ wget https://phar.phpunit.de/phpunit-nightly.phar
+
+        $ sudo mv phpunit-nightly.phar /usr/local/bin/phpunit
+
+        $ sudo chmod +x /usr/local/bin/phpunit
+
+        $ phpunit --version
+
+        如果输出结果如下，则表明你已经安装成功：
+
+        ![执行结果](./test.png)
+
+        关于PHPUnit可以点击[PHPUnit](https://github.com/sebastianbergmann/phpunit) 👈点击
 
 ```
         
