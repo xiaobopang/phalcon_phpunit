@@ -31,7 +31,7 @@
 
 ![执行结果](./test.png)
 
-[PHPUnit](https://github.com/sebastianbergmann/phpunit) 👈点击
+[PHPUnit](https://github.com/sebastianbergmann/phpunit) 👈点击左侧"PHPUnit"
 
 
         
