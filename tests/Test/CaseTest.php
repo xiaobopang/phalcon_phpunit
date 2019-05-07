@@ -8,11 +8,9 @@
  */
 
 namespace Test;
-
 /**
  * Class UnitCaseTest
  */
-
 class CaseTest extends \UnitTestCase
 {
     /**

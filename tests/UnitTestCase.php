@@ -41,8 +41,8 @@ abstract class UnitTestCase extends PhalconTestCase
         } else {
             $this->_config = $config;
         }
-
-        // Load any additional services that might be required during testing
+        
+        // 在测试期间根据需要加载一些服务
         $di = new FactoryDefault();
         Di::reset();
 
