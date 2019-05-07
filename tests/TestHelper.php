@@ -24,8 +24,7 @@ set_include_path(
     ROOT_PATH . PATH_SEPARATOR . get_include_path()
 );
 
-// use the application autoloader to autoload the classes
-// autoload the dependencies found in composer
+// 使用autoloader加载应用中的类，autoload依赖可以在composer vendor目录下找到
 $loader = new \Phalcon\Loader();
 
 $loader->registerDirs(array(
@@ -41,18 +40,11 @@ $loader->registerNamespaces(array(
 ));
 
 $loader->register();
-
 $config = include PATH_CONFIG;
-
 $di = new FactoryDefault();
-
 Di::reset();
 
-// add any needed services to the DI here
-/**
- * Database connection is created based in the parameters defined in the configuration file
- */
-
+//这里我们注入一些需要用到的service服务，例如：db
 $di->set('db', function () use ($config) {
     return new \Phalcon\Db\Adapter\Pdo\Mysql($config->database->toArray());
 }, true);
