@@ -12,11 +12,9 @@
 
 ### 快速开始
 
+#### 1.安装PHPUnit,以下为Linux操作环境：
+
 ````
-    1.安装PHPUnit
-
-        以下为Linux操作环境：
-
         $ wget wget -O phpunit https://phar.phpunit.de/phpunit-8.phar
 
         $ sudo mv phpunit-8.phar /usr/local/bin/phpunit
@@ -25,16 +23,17 @@
 
         $ phpunit --version
 
-        如果输出结果如下，则表明你已经安装成功：
 ````
+#### 如果输出结果如下，则表明你已经安装成功：
 
 ![执行结果](./test.png)
 
 [PHPUnit](https://github.com/sebastianbergmann/phpunit) 👈点击左侧"PHPUnit"
 
-```
-    2、通过composer来引入相关测试组件，首先进入你的项目根目录执行一下命令：
 
+#### 2、通过composer来引入相关测试组件，首先进入你的项目根目录执行一下命令：
+
+```
         1）composer require --dev phpunit/phpunit ^8
         2）composer require phalcon/incubator
         3）以上安装结束后，在你的项目根目录下创建tests文件夹，并进入到tests文件夹下
@@ -81,9 +80,11 @@
                 </whitelist>
             </filter>
         </phpunit>
+```
 
-        5）紧接着在你的tests文件夹下新建一个TestHelper.php，其内容如下：
+#### 5）紧接着在你的tests文件夹下新建一个TestHelper.php，其内容如下：
 
+```
         <?php
             /*
             * Created Date: Sunday May 5th 2019
@@ -136,9 +137,11 @@
             }, true);
 
             Di::setDefault($di);
+```
 
-        6）好了，我们在创建完TestHelper.php之后，在tests目录下接着新建一个UnitTestCase.php的文件：
+####  6）好了，我们在创建完TestHelper.php之后，在tests目录下接着新建一个UnitTestCase.php的文件：
 
+```
         <?php
             /*
             * Created Date: Sunday May 5th 2019
@@ -236,11 +239,14 @@
                     }
                 }
             }
+```
 
-        7）为了使你的测试和你的应用隔离开来，避免污染整个项目源代码，我们可以为单元测试创建命名空间。好了，接下来我们需要
-        在tests文件夹下接着创建一个名叫Test的文件夹。
-        8）然后，我们在Test文件里新建一个名叫CaseTest.php的文件。其内容如下：
+#### 7）为了使你的测试和你的应用隔离开来，避免污染整个项目源代码，我们可以为单元测试创建命名空间。好了，接下来我们需要在tests文件夹下接着创建一个名叫Test的文件夹。
 
+
+#### 8）然后，我们在Test文件里新建一个名叫CaseTest.php的文件。其内容如下：
+
+```
         <?php
             /*
             * Created Date: Monday May 6th 2019
@@ -311,10 +317,13 @@
                     $this->assertEquals($password, '9cbf8a4dcb8e30682b927f352d6559a0', "密码有误");
                 }
             }
-        9）因为我们之前在UnitTestCase.php的setUp()中做了一些服务的依赖注入，以及在TestHelper.php中注册了相关的空间，
+
+```       
+
+ #### 9）因为我们之前在UnitTestCase.php的setUp()中做了一些服务的依赖注入，以及在TestHelper.php中注册了相关的空间，
         并引入了Autoload相关文件。到此你就可以开心的编写你所想要的单元测试代码了。原文附上tests文件夹，仅供参考，如发现错误
         还望指出。谢谢～
-        10）原文参考了Phalcon官网提供的相关单元测试文章，下面有相关链接：
+ #### 10）原文参考了Phalcon官网提供的相关单元测试文章，下面有相关链接：
 
 ```
 
