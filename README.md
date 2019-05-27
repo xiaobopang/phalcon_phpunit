@@ -10,9 +10,9 @@
    2、其次你对composer包依赖管理有一定的了解
 ```
 
-### 快速开始
+## 快速开始
 
-#### 1.安装PHPUnit,以下为Linux操作环境：
+### 1.安装PHPUnit,以下为Linux操作环境：
 
 ````
         $ wget wget -O phpunit https://phar.phpunit.de/phpunit-8.phar
@@ -31,14 +31,17 @@
 [PHPUnit](https://github.com/sebastianbergmann/phpunit) 👈点击左侧"PHPUnit"
 
 
-#### 2、通过composer来引入相关测试组件，首先进入你的项目根目录执行一下命令：
+### 2、通过composer来引入相关测试组件，首先进入你的项目根目录执行一下命令：
+
+#### 1）composer require --dev phpunit/phpunit ^8
+
+#### 2）composer require phalcon/incubator
+
+#### 3）以上安装结束后，在你的项目根目录下创建tests文件夹，并进入到tests文件夹下
+
+#### 4）在tests文件夹下新建phpunit.xml，格式如下：
 
 ```
-        1）composer require --dev phpunit/phpunit ^8
-        2）composer require phalcon/incubator
-        3）以上安装结束后，在你的项目根目录下创建tests文件夹，并进入到tests文件夹下
-        4）在tests文件夹下新建phpunit.xml，格式如下：
-
         <?xml version="1.0" encoding="UTF-8"?>
         <phpunit bootstrap="./TestHelper.php"
                 backupGlobals="false"
